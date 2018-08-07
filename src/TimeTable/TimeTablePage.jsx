@@ -1,33 +1,73 @@
 import React, {Component} from 'react';
-import TimeTable from './TimeTable';
-import TimeBar from './TimeBar';
+import Timeline from 'react-calendar-timeline';
+import 'react-calendar-timeline/lib/Timeline.css';
+import moment from 'moment';
+
+const groups = [{id: 1, title: 'group 1'}, {id: 2, title: 'group 2'}];
+
+const items = [
+  {
+    id: 1,
+    group: 1,
+    title: 'item 1',
+    start_time: moment(),
+    end_time: moment().add(1, 'hour'),
+  },
+  {
+    id: 2,
+    group: 2,
+    title: 'item 2',
+    start_time: moment().add(-0.5, 'hour'),
+    end_time: moment().add(0.5, 'hour'),
+  },
+  {
+    id: 3,
+    group: 1,
+    title: 'item 3',
+    start_time: moment().add(2, 'hour'),
+    end_time: moment().add(3, 'hour'),
+  },
+];
 
 export default class TimeTablePage extends Component {
   constructor(state) {
     super(state);
     this.state = {
+      groups: [{id: 1, title: 'group 1'}, {id: 2, title: 'group 2'}],
+      items: [
+        {
+          id: 1,
+          group: 1,
+          title: 'item 1',
+          start_time: moment(),
+          end_time: moment().add(1, 'hour'),
+        },
+        {
+          id: 2,
+          group: 2,
+          title: 'item 2',
+          start_time: moment().add(-0.5, 'hour'),
+          end_time: moment().add(0.5, 'hour'),
+        },
+        {
+          id: 3,
+          group: 1,
+          title: 'item 3',
+          start_time: moment().add(2, 'hour'),
+          end_time: moment().add(3, 'hour'),
+        },
+      ],
       who: '',
       what: '',
       begin: null,
       end: null,
     };
     this.onChangeField = this.onChangeField.bind(this);
-    this.createTable = this.createTable.bind(this);
   }
 
   // stateの更新
   onChangeField(e, key) {
     this.setState({[key]: e.target.value});
-  }
-
-  //TimeTable作成
-  createTable() {
-    <TimeBar
-      who={this.state.who}
-      what={this.state.what}
-      begin={this.state.begin}
-      end={this.state.end}
-    />;
   }
 
   render() {
@@ -60,7 +100,13 @@ export default class TimeTablePage extends Component {
         <div className="push_line">
           <button onClick={this.createTable}>Enter</button>
         </div>
-        <TimeTable />
+
+        <Timeline
+          groups={this.state.groups}
+          items={this.state.items}
+          defaultTimeStart={moment().add(-12, 'hour')}
+          defaultTimeEnd={moment().add(12, 'hour')}
+        />
       </div>
     );
   }
