@@ -1,6 +1,33 @@
-body {
+@charset "UTF-8";
+html {
+  background: url("../images/london2.png") no-repeat;
+  background-size: cover;
   background-color: #B69B63;
-  background-image: url("../images/london.png");
+  height: 100vh;
+  width: 100vh; }
+
+.bkRGBA {
+  /* 背景画像の透過用css */
+  background: rgba(255, 255, 255, 0.3); }
+
+.title1 {
+  height: 100px;
+  width: 327px; }
+
+.title2 {
+  height: 36px;
+  width: 145px; }
+
+.main {
+  width: 327px; }
+
+.main2 {
+  width: auto; }
+
+.main3 {
+  width: 65px; }
+
+body {
   color: #003354;
   font-family: cursive, 'Hiragino Mincho Pro', serif; }
 
@@ -10,6 +37,9 @@ p {
 .book_title {
   background-color: #006F5F;
   color: #4D3614; }
+
+.cell {
+  border-bottom: 1px solid #003354; }
 
 .footer {
   margin-top: 30px; }

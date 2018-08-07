@@ -3,14 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_variables.scss";
 
-body{
+html{
+  background: url("../images/london2.png") no-repeat;
+  background-size: cover;
+
   background-color: $YB;
+  height: 100vh;
+  width: 100vh;
+}
 
-  // 羊皮紙的なやつを作って見たが、微妙だったww
-  // background-image: url("parchment.png");
-  // background-repeat: no-repeat;
-  background-image: url("../images/london.png");
+.bkRGBA{
+  /* 背景画像の透過用css */
+  background: rgba(255,255,255,0.3);
+}
 
+.title1{
+  height: 100px;
+  width: 327px;
+}
+
+.title2{
+  height: 36px;
+  width: 145px;
+}
+
+.main{
+  width: 327px;
+}
+.main2{
+  width: auto;
+}
+.main3{
+  width: 65px;
+}
+
+body{
   color: $IB_d;
   font-family: cursive, 'Hiragino Mincho Pro', serif;
 }
@@ -22,6 +49,10 @@ p{
 .book_title{
   background-color: $BG;
   color: $DB
+}
+
+.cell{
+  border-bottom: 1px solid $IB_d;
 }
 
 .footer{
