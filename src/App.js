@@ -17,12 +17,13 @@ class App extends Component {
           <p>ミステリーを読む手助けになります</p>
           <Router>
             <div>
-              <Link to="/about">About</Link>
+              <Link to="/about">探偵手帳とは</Link>
+              <Link to="/timeline">時系列</Link>
               <Route path="/about" component={About} />
+              <Route path="/timeline" component={TimeTablePage} />
             </div>
           </Router>
         </header>
-        <TimeTablePage />
       </div>
     );
   }
