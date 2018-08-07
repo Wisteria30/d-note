@@ -1,0 +1,28 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_variables.scss";
+
+body{
+  background-color: $YB;
+
+  // 羊皮紙的なやつを作って見たが、微妙だったww
+  // background-image: url("parchment.png");
+  // background-repeat: no-repeat;
+
+  color: $IB_d;
+  font-family: cursive, 'Hiragino Mincho Pro', serif;
+}
+
+p{
+  color: $DB;
+}
+
+.book_title{
+  background-color: $BG;
+  color: $DB
+}
+
+.footer{
+  margin-top: 30px;
+}

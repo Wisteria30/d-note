@@ -1,0 +1,14 @@
+body {
+  background-color: #B69B63;
+  color: #003354;
+  font-family: cursive, 'Hiragino Mincho Pro', serif; }
+
+p {
+  color: #4D3614; }
+
+.book_title {
+  background-color: #006F5F;
+  color: #4D3614; }
+
+.footer {
+  margin-top: 30px; }
