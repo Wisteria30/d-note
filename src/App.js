@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TimeTablePage from "./TimeTable/TimeTablePage"
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           </h1>
           <p>ミステリーを読む手助けになります</p>
         </header>
+        <TimeTablePage />
       </div>
     );
   }
