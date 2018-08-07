@@ -1,0 +1,36 @@
+// Place all the styles related to the Book controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_variables.scss";
+p.book_p{
+  margin: 2px;
+  line-height: 1;
+}
+
+h1.book_h1{
+  margin: 1px;
+  line-height: 1;
+}
+
+h2.book_h2{
+  color: $IB;
+  font-size: 20px;
+  margin: 1px;
+}
+
+.book_div1{
+  display: inline-block;
+  text-align: left;
+}
+
+.book_div2{
+  text-align: right;
+}
+
+.tablehead{
+  background-color: $BG;
+}
+
+.cell{
+  border-bottom: 1px solid $IB_d;
+}
