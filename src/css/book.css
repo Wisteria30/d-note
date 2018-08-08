@@ -1,41 +1,34 @@
 .book_p {
   margin: 2px;
-  line-height: 1;
-}
+  line-height: 1; }
 
 h1.book_h1 {
   margin: 1px;
-  line-height: 1;
-}
+  line-height: 1; }
 
 h2.book_h2 {
   color: #00426D;
   font-size: 20px;
-  margin: 1px;
-}
+  margin: 1px; }
 
 .book_div1 {
   display: inline-block;
-  text-align: left;
-}
+  text-align: left; }
 
 .book_div2 {
-  text-align: right;
-}
+  text-align: right; }
 
 .tablehead {
-  background-color: #006F5F;
-}
+  background-color: #006F5F; }
 
 .title3 {
   height: 44px;
-  width: 195px;
-}
+  width: 195px; }
 
 .main4 {
-  width: 295px;
-}
+  width: 295px; }
 
 .main5 {
-  width: 120px;
-}
+  width: 120px; }
+
+/*# sourceMappingURL=book.css.map */
