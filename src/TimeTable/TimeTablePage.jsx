@@ -89,6 +89,9 @@ export default class TimeTablePage extends Component {
   render() {
     return (
       <div>
+        <div>
+          <p>登場人物たちの流れを記入してください</p>
+        </div>
         <div className="who_is">
           <p>Who is ?</p>
           <input

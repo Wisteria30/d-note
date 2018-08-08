@@ -28,6 +28,10 @@ export default class CorrelationDiagram extends Component {
     return (
       <div>
         <div>
+          <p>未実装です</p>
+        </div>
+        
+        <div>
           <select value={this.state.sort} onChange={this.onChange.bind(this)}>
             <option>ASC</option>
             <option>DESC</option>

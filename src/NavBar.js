@@ -8,51 +8,79 @@ import CorrelationDiagram from './CorrelationDiagram';
 import DragSource from './Sketch/SketchPage';
 import Note from './Note';
 import About from './About';
-// import {browserHistory} from 'react-router';
+
+import {List, ListItem} from 'material-ui';
 
 class NavBar extends Component {
+  componentWillMount() {
+    this.setState({drawerOpen: false});
+  }
+  handleOpen = () => {
+    this.setState({drawerOpen: true});
+  };
+  handleClose = () => {
+    this.setState({drawerOpen: false});
+  };
+
   render() {
     return (
       <MuiThemeProvider>
-        <div>
-          <Router>
+        <Router>
+          <div>
             <Drawer
               docked={false}
-              width={130}
-              open={this.props.open}
-              onRequestChange={() => this.props.onToggle()}>
-              <MenuItem>
-                <Link to="/About">探偵手帳とは</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/timeline">時系列</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/correlationDiagram">人物相関図</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/sketch">見取り図</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link to="/note">メモ</Link>
-              </MenuItem>
+              open={this.state.drawerOpen}
+              containerStyle={{top: 64}}
+              onRequestChange={this.handleClose}>
+              <List>
+                {/* <ListItem
+                  primaryText="Home"
+                  containerElement={<Link to="/" />}
+                  onTouchTap={this.handleClose}
+                /> */}
 
-              <Route path="/about" component={About} />
-              <Route path="/timeline" component={TimeTablePage} />
-              <Route
-                path="/correlationDiagram"
-                component={CorrelationDiagram}
-              />
-              <Route path="/sketch" component={DragSource} />
-              <Route path="/note" component={Note} />
+                <ListItem
+                  className="test"
+                  primaryText="探偵手帳とは"
+                  containerElement={<Link to="/about" />}
+                  onTouchTap={this.handleClose}
+                />
+
+                <ListItem
+                  primaryText="時系列"
+                  containerElement={<Link to="/timeline" />}
+                  onTouchTap={this.handleClose}
+                />
+
+                <ListItem
+                  primaryText="人物相関図　※未実装"
+                  containerElement={<Link to="/correlationDiagram" />}
+                  onTouchTap={this.handleClose}
+                />
+
+                <ListItem
+                  primaryText="見取り図　※未実装"
+                  containerElement={<Link to="/sketch" />}
+                  onTouchTap={this.handleClose}
+                />
+
+                <ListItem
+                  primaryText="メモ"
+                  containerElement={<Link to="/note" />}
+                  onTouchTap={this.handleClose}
+                />
+              </List>
             </Drawer>
-          </Router>
 
-          <AppBar
-            title="Menu"
-            onLeftIconButtonClick={() => this.props.onToggle()}
-          />
-        </div>
+            <AppBar title="Menu" onLeftIconButtonClick={this.handleOpen} />
+
+            <Route path="/about" component={About} />
+            <Route path="/timeline" component={TimeTablePage} />
+            <Route path="/correlationDiagram" component={CorrelationDiagram} />
+            <Route path="/sketch" component={DragSource} />
+            <Route path="/note" component={Note} />
+          </div>
+        </Router>
       </MuiThemeProvider>
     );
   }
