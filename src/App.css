@@ -1,9 +1,11 @@
 html {
+  position: relative;
+  left: 5px;
   background-color: #B69B63;
   color: #003354;
 }
 
 body {
   color: #003354;
-  font-family: cursive, 'Hiragino Mincho Pro', serif;
+  font-family: "Hiragino Kaku Gothic ProN", cursive, 'Hiragino Mincho Pro', serif;
 }

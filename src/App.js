@@ -21,6 +21,9 @@ import AddIcon from '@material-ui/icons/Add';
 import Icon from '@material-ui/core/Icon';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {withRouter} from 'react-router';
+
+import {Drawer, List, ListItem} from 'material-ui';
+
 import NavBar from './NavBar';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -54,10 +57,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div>
-          <NavBar onToggle={() => this.handleToggle()} open={this.state.open} />
-        </div>
-
         <header className="App-header">
           <h1>
             <div>
@@ -65,8 +64,12 @@ class App extends Component {
             </div>
           </h1>
         </header>
-        <p>ミステリーを読む手助けになります</p>
-        <Router>
+
+        <div className="test">
+          <NavBar onToggle={() => this.handleToggle()} open={this.state.open} />
+        </div>
+
+        {/* <Router>
           <div className="container">
             <ul>
               <li>
@@ -102,7 +105,7 @@ class App extends Component {
             <Route path="/sketch" component={DragSource} />
             <Route path="/note" component={Note} />
           </div>
-        </Router>
+        </Router> */}
         {/* <CorrelationDiagram nodes={nodes} connections={connections} />, */}
       </div>
     );

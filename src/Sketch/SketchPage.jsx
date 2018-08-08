@@ -1,12 +1,18 @@
-// // import React, {Component} from 'react';
-// // import {DragDropContext} from 'react-dnd';
-// // import HTML5Backend from 'react-dnd-html5-backend';
-// // import Container from './ Container';
-// // class SketchPage extends Component {
-// //   render() {
-// //     return <Container />;
-// //   }
-// // }
+import React, {Component} from 'react';
+import {DragDropContext} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+import Container from './ Container';
+
+export default class SketchPage extends Component {
+  render() {
+    // return <Container />;
+    return (
+      <div>
+        <p>未実装です</p>
+      </div>
+    );
+  }
+}
 
 // // export default DragDropContext(HTML5Backend)(SketchPage);
 // import React, { Component } from 'react';
