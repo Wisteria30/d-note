@@ -4,9 +4,10 @@ import logo from './logo.svg';
 import './App.css';
 import TimeTablePage from './TimeTable/TimeTablePage';
 import CorrelationDiagram from './CorrelationDiagram';
-// import SketchPage from './Sketch/SketchPage';
+import DragSource from "./Sketch/SketchPage"
 import Note from './Note';
 import {Button, Icon, Dimmer, Loader, Image, Segment} from 'semantic-ui-react';
+import About from './About';
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
               <Link to="/about">探偵手帳とは</Link>
               <Link to="/timeline">時系列</Link>
               <Link to="/correlationDiagram">人物相関図</Link>
-              {/* <Link to="/sketch">見取り図</Link> */}
+              <Link to="/sketch">見取り図</Link>
               <Link to="/note">メモ</Link>
               <Route path="/about" component={About} />
               <Route path="/timeline" component={TimeTablePage} />
@@ -32,7 +33,7 @@ class App extends Component {
                 path="/correlationDiagram"
                 component={CorrelationDiagram}
               />
-              {/* <Route path="/sketch" component={SketchPage} /> */}
+              <Route path="/sketch" component={DragSource} />
               <Route path="/note" component={Note} />
             </div>
           </Router>
@@ -42,11 +43,4 @@ class App extends Component {
     );
   }
 }
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-);
-
 export default App;

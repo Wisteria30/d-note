@@ -15,6 +15,7 @@
     "react-mindmap": "^2.1.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-svg": "^5.0.14",
     "react-visjs-timeline": "^1.5.0",
     "rebass": "^2.0.0-10",
     "semantic-ui-react": "^0.82.2",
