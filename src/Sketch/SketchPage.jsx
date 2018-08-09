@@ -1,60 +1,41 @@
-// import React, {Component} from 'react';
-// import {DragDropContext} from 'react-dnd';
-// import HTML5Backend from 'react-dnd-html5-backend';
-// import Container from './ Container';
-// class SketchPage extends Component {
-//   render() {
-//     return <Container />;
-//   }
-// }
-
-// export default DragDropContext(HTML5Backend)(SketchPage);
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { DragSource } from 'react-dnd';
-import { ItemTypes } from './Constants';
+import { render } from 'react-dom';
+import { Stage, Layer, Rect, Text } from 'react-konva';
+import Konva from 'konva';
 
-/**
- * Implements the drag source contract.
- */
-const cardSource = {
-  beginDrag(props) {
-    return {
-      text: props.text
-    };
-  }
-};
-
-/**
- * Specifies the props to inject into your component.
- */
-function collect(connect, monitor) {
-  return {
-    connectDragSource: connect.dragSource(),
-    isDragging: monitor.isDragging()
+class ColoredRect extends Component {
+  state = {
+    color: 'green'
   };
-}
-
-const propTypes = {
-  text: PropTypes.string.isRequired,
-
-  // Injected by React DnD:
-  isDragging: PropTypes.bool.isRequired,
-  connectDragSource: PropTypes.func.isRequired
-};
-
-class Card extends Component {
+  handleClick = () => {
+    this.setState({
+      color: Konva.Util.getRandomColor()
+    });
+  };
   render() {
-    const { isDragging, connectDragSource, text } = this.props;
-    return connectDragSource(
-      <div style={{ opacity: isDragging ? 0.5 : 1 }}>
-        {text}
-      </div>
+    return (
+      <Rect
+        x={20}
+        y={20}
+        width={50}
+        height={50}
+        fill={this.state.color}
+        shadowBlur={5}
+        onClick={this.handleClick}
+      />
     );
   }
 }
 
-Card.propTypes = propTypes;
-
-// Export the wrapped component:
-export default DragSource(ItemTypes.CARD, cardSource, collect)(Card);
+export default class SketchPage extends Component {
+  render() {
+    return (
+      <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Layer>
+          <Text text="Try click on rect" />
+          <ColoredRect />
+        </Layer>
+      </Stage>
+    );
+  }
+}

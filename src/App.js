@@ -6,7 +6,6 @@ import TimeTablePage from './TimeTable/TimeTablePage';
 import CorrelationDiagram from './CorrelationDiagram';
 import DragSource from "./Sketch/SketchPage"
 import Note from './Note';
-import {Button, Icon, Dimmer, Loader, Image, Segment} from 'semantic-ui-react';
 import About from './About';
 
 class App extends Component {
