@@ -5,6 +5,10 @@ html {
   color: #003354;
 }
 
+header {
+  text-align: center;
+}
+
 body {
   color: #003354;
   font-family: "Hiragino Kaku Gothic ProN", cursive, 'Hiragino Mincho Pro', serif;
